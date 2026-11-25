@@ -1,0 +1,14 @@
+/*
+  Portfolio palette.
+  Ink ground, warm text, and one brass accent.
+*/
+@theme {
+  --color-background: #0e1014;
+  --color-foreground: #f3efe6;
+  --color-muted: #a8a296;
+  --color-border: #2c3038;
+  --color-accent: #d6b48a;
+  --color-surface: #171a20;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
+}

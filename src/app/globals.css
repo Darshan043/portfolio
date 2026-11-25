@@ -1,0 +1,47 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+@layer base {
+  html {
+    height: 100%;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    min-height: 100%;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+  }
+}
+
+/*
+  Matches prefers-reduced-motion handling in src/animation/reduced-motion.ts.
+  Hover depth stays off when reduced motion is requested.
+*/
+.surface-card {
+  transform: perspective(900px) translateZ(0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .surface-card {
+    transition:
+      transform 200ms ease,
+      border-color 200ms ease;
+  }
+
+  .surface-card:hover {
+    transform: perspective(900px) translateY(-6px) rotateX(2deg);
+    border-color: color-mix(
+      in srgb,
+      var(--color-accent) 55%,
+      var(--color-border)
+    );
+  }
+}
